@@ -1,0 +1,75 @@
+# ============================================================
+# Edge AI Object Detection - .gitignore
+# ============================================================
+
+# ----- Build Artifacts -----
+build/
+cmake-build-*/
+*.o
+*.so
+*.a
+*.dylib
+*.dll
+*.exe
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# ----- Models & Engines -----
+models/*.engine
+models/*.onnx
+models/*.pt
+models/*.weights
+!models/.gitkeep
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+*.egg
+.eggs/
+venv/
+env/
+.venv/
+
+# ----- IDE -----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.cproject
+
+# ----- Data -----
+datasets/
+data/
+*.mp4
+*.avi
+*.mkv
+*.jpg
+*.jpeg
+*.png
+!docs/*.png
+!docs/*.jpg
+
+# ----- Logs -----
+logs/
+*.log
+
+# ----- OS -----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- Docker -----
+.docker/
+
+# ----- Benchmark outputs -----
+benchmarks/results/*.png
+benchmarks/results/*.pdf
+!benchmarks/results/benchmark_report.json
