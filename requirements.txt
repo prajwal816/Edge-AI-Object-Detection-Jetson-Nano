@@ -1,0 +1,45 @@
+# ============================================================
+# Edge AI Object Detection - Python Dependencies
+# ============================================================
+# Install: pip install -r requirements.txt
+# For Jetson Nano: use JP5.1+ compatible wheels
+# ============================================================
+
+# ----- Core ML Framework -----
+ultralytics>=8.0.0          # YOLOv8 training and export
+torch>=2.0.0                # PyTorch backend
+torchvision>=0.15.0         # Vision transforms
+
+# ----- Model Export -----
+onnx>=1.14.0                # ONNX model format
+onnxruntime>=1.15.0         # ONNX Runtime for validation
+# tensorrt                  # Install via NVIDIA SDK (Jetson)
+# pycuda                    # Install via pip on Jetson
+
+# ----- Computer Vision -----
+opencv-python>=4.8.0        # Image processing
+Pillow>=10.0.0              # Image I/O
+
+# ----- Data & Config -----
+numpy>=1.24.0               # Numerical computing
+pyyaml>=6.0                 # YAML config loading
+scipy>=1.10.0               # Scientific computing
+
+# ----- CLI & Logging -----
+click>=8.1.0                # CLI framework
+rich>=13.0.0                # Rich console output
+tqdm>=4.65.0                # Progress bars
+colorlog>=6.7.0             # Colored logging
+
+# ----- Visualization & Reporting -----
+matplotlib>=3.7.0           # Plotting and charts
+seaborn>=0.12.0             # Statistical visualization
+tabulate>=0.9.0             # Table formatting
+
+# ----- Testing -----
+pytest>=7.4.0               # Test framework
+pytest-cov>=4.1.0           # Coverage reporting
+
+# ----- Development -----
+black>=23.0.0               # Code formatting
+flake8>=6.0.0               # Linting
