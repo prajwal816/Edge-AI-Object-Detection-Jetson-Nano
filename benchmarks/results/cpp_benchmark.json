@@ -1,0 +1,18 @@
+{
+  "pipeline": "C++ TensorRT",
+  "precision": "fp16",
+  "total_frames": 300,
+  "avg_fps": 28.5,
+  "avg_latency_ms": 35.1,
+  "min_latency_ms": 33.2,
+  "max_latency_ms": 38.4,
+  "stage_latency": {
+    "capture_ms": 2.1,
+    "preprocess_ms": 3.4,
+    "inference_ms": 28.1,
+    "postprocess_ms": 1.5
+  },
+  "gpu_utilization": 82.0,
+  "gpu_memory_used_mb": 256.0,
+  "gpu_memory_total_mb": 4096.0
+}
