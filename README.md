@@ -1,4 +1,4 @@
-# 🚀 Edge AI Object Detection System — NVIDIA Jetson Nano
+# Edge AI Object Detection System — NVIDIA Jetson Nano
 
 [![C++17](https://img.shields.io/badge/C++-17-blue.svg)](https://isocpp.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-yellow.svg)](https://www.python.org/)
