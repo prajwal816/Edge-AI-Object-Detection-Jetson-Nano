@@ -1,0 +1,44 @@
+# ============================================================
+# Edge AI Object Detection System
+# Training Configuration
+# ============================================================
+
+model:
+  variant: "yolov8n"          # yolov8n, yolov8s, yolov8m
+  num_classes: 5
+  input_size: 640
+  pretrained: true
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.01
+  optimizer: "SGD"
+  augmentation: true
+  workers: 4
+  device: "0"                 # CUDA device or "cpu"
+  project: "runs/train"
+  name: "edge_ai_yolov8"
+
+dataset:
+  root: "datasets/edge_ai"
+  train_split: 0.8
+  num_images: 500
+  num_classes: 5
+  image_size: 640
+  class_names:
+    - "person"
+    - "car"
+    - "bicycle"
+    - "motorcycle"
+    - "bus"
+
+export:
+  onnx_opset: 12
+  dynamic_batch: true
+  simplify: true
+  output_dir: "models"
+  trt_precision: "fp16"
+  trt_workspace_mb: 1024
+  trt_max_batch: 1
+  int8_calibration_images: 100

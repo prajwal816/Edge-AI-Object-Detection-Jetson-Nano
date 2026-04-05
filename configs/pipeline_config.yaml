@@ -1,0 +1,51 @@
+# ============================================================
+# Edge AI Object Detection System
+# Pipeline Configuration
+# ============================================================
+# This config controls the C++ inference pipeline.
+# All paths are relative to the project root.
+# ============================================================
+
+model:
+  engine_path: "models/yolov8_det.engine"
+  input_size: [640, 640]
+  num_classes: 80
+  confidence_threshold: 0.45
+  nms_threshold: 0.5
+  precision: "fp16"           # fp32, fp16, int8
+  max_batch_size: 1
+  memory_pool_mb: 256
+  num_detections: 8400        # YOLOv8 anchor-free detections
+
+camera:
+  source: "synthetic"         # csi, usb, video, synthetic
+  width: 1280
+  height: 720
+  fps: 30
+  device_id: 0                # USB webcam device ID
+  csi_sensor_id: 0            # CSI camera sensor ID
+  flip_method: 0              # 0=none, 2=180°
+  video_path: ""              # Path for video file source
+  synthetic_num_objects: 5
+  synthetic_motion: true
+
+pipeline:
+  queue_size: 4               # Inter-thread queue depth
+  warmup_frames: 10           # Warmup before benchmarking
+  max_frames: 0               # 0 = unlimited
+  display: true               # Show OpenCV window
+  save_output: false
+  output_path: "output"
+
+benchmark:
+  enabled: false
+  num_frames: 300
+  warmup_frames: 30
+  log_interval: 50
+
+# ============================================================
+# Precision mode performance (Jetson Nano, YOLOv8n):
+#   FP32:  ~10 FPS,  ~100ms latency
+#   FP16:  ~28 FPS,  ~35ms  latency  (recommended)
+#   INT8:  ~40 FPS,  ~25ms  latency  (requires calibration)
+# ============================================================
